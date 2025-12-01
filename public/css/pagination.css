@@ -1,0 +1,47 @@
+.pagination {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .pagination li {
+      display: flex;
+    }
+
+    .pagination a {
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .pagination a:hover {
+      background: #ddd;
+    }
+
+    .pagination .active a {
+      color: red;
+      font-weight: bold;
+      border-bottom: 3px solid red;
+    }
+
+    .pagination .disabled a {
+      color: #999;
+      pointer-events: none;
+    }
+
+    /* Responsive: hide extra numbers on small screens */
+    @media (max-width: 600px) {
+      .pagination li.hide-mobile {
+        display: none;
+      }
+    }

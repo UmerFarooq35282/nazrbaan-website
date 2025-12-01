@@ -1,0 +1,10 @@
+import AccordionUsage from "./components/common/NavbarAccordian";
+import MainPage from "./pages/MainPage";
+
+function App() {
+  return <div className="container">
+    <MainPage />
+  </div>;
+}
+
+export default App;

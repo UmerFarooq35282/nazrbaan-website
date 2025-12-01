@@ -1,0 +1,621 @@
+@font-face {
+  font-family: "mainFont";
+  src: url("/fonts/JameelNooriNastaleeqRegular.ttf");
+}
+
+:root {
+  --navbar-font-size: 2vw;
+  --body-padding: 10vw;
+  --logo-size: 100px;
+  --medium-gap: 2vw;
+  --main-color: rgb(18, 16, 69);
+  --font-color: "#000";
+  --background-color: #fff;
+  --cards-gap: 1vw;
+  --sections-gap: 2vh;
+  --medium-padding: 2vh;
+  --small-gap: 1vh;
+  --small-padding: 0.5rem;
+  --large-section-seperator: 10vh;
+  --btn-font-size: 2rem;
+  --btn-padding: 0.3rem;
+  --medium-font-size: 1.4rem;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgb(18, 16, 69);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Hover Effect */
+.read-more:hover {
+    background: #005fcc;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.dark {
+  --font-color: #fff;
+  --background-color: #000;
+}
+.seperator {
+  height: var(--large-section-seperator);
+}
+.adsButton {
+  padding: var(--btn-padding);
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  color: #000;
+  font-size: var(--btn-font-size);
+  margin-top: 20px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "mainFont", sans-serif;
+  text-align: right;
+}
+a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.container {
+  width: 100vw;
+}
+.mainNavbar {
+  margin-bottom: var(--sections-gap);
+}
+.menuIcon{
+  display: none;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: var(--medium-gap);
+  transition: all .5s;
+  margin-top: 10px;
+}
+
+/* MOBILE MENU WRAPPER */
+.mobileMenuWrapper {
+  padding: 1rem;
+  background: white;
+  direction: rtl;
+}
+
+.mobileMenuItems {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.mobileMenuLink {
+  font-size: 22px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: right;
+}
+
+.topNavbar {
+  background-color: rgb(18, 16, 69);
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
+  display: flex;
+  justify-content: end;
+  flex-direction: row-reverse;
+  color: white;
+  align-items: center;
+  gap: var(--medium-gap);
+}
+.topNavbar .navlink{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: var(--medium-gap);
+  transition: all .5s;
+}
+.navlink:hover{
+  text-decoration: underline;
+}
+.bottomNavbar ul {
+  display: flex;
+  list-style: none;
+  gap: var(--medium-gap);
+  font-size: var(--navbar-font-size);
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+}
+.logo {
+  width: var(--logo-size);
+  height: var(--logo-size);
+}
+
+.upperCards {
+  width: 100%;
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--sections-gap);
+}
+
+.upperSection {
+  width: 100%;
+  padding: var(--medium-padding);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--medium-gap);
+}
+.upperSection .rightPart {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.upperSection .leftPart {
+  width: 50%;
+}
+.bottomSection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.upperSection .rightPart .card {
+  background-color: var(--background-color);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  padding: var(--small-padding);
+}
+
+.upperSection .rightPart .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leftPart .card {
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  padding: var(--small-padding);
+  align-items: flex-end;
+}
+
+.leftPart .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hiddenSection {
+  width: 100%;
+  gap: var(--cards-gap);
+  display: none;
+}
+
+.hiddenSection .card {
+  width: 33%;
+  background-color: var(--background-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  padding: var(--small-padding);
+  align-items: flex-end;
+}
+
+.hiddenSection .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottomSection .card {
+  width: 25%;
+  background-color: var(--background-color);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  padding: var(--small-padding);
+  align-items: flex-end;
+}
+
+.bottomSection .card img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.featureSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--medium-gap);
+  align-items: flex-end;
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
+}
+
+.featureSection h1 {
+  margin-bottom: var(--small-gap);
+}
+
+.miniCardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.miniCard {
+  background-color: var(--background-color);
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  padding: var(--small-padding);
+}
+.miniCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adsCard {
+  width: 100%;
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-color);
+}
+.adsCard .content {
+  width: 100%;
+  background-color: var(--main-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: var(--medium-padding);
+  color: white;
+}
+
+.adsCard .content .leftContent {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+.adsCard .content .leftContent img {
+  position: absolute;
+  top: 50%;
+}
+
+.socialCards{
+  padding-left: var(--body-padding);
+  padding-right: var(--body-padding);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: var(--medium-gap);
+}
+ .socialCards .cards{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  width: 100%;
+ }
+
+ .socialCards .cards a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: var(--medium-gap);
+  background-color: #fff;
+ }
+
+ .socialCards .cards a img{
+  width: 50px;
+  height: 50px;
+ }
+ footer {
+      background: #111;
+      padding: 20px;
+      border-top: 1px solid #333;
+      color: #fff;
+      padding-left: var(--body-padding);
+      padding-right: var(--body-padding);
+    }
+
+    footer p {
+      margin: 10px 0;
+      font-size: 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 5px;
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .footer-grid li {
+      list-style: none;
+    }
+
+    .footer-grid a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-grid a:hover {
+      color: #1db954;
+      text-decoration: underline;
+    }
+
+@media screen and (max-width: 1021px) {
+  :root {
+    --body-padding: 0.8vw;
+    --navbar-font-size: 3vw;
+  }
+
+  .upperSection {
+    padding: 0px;
+  }
+  .upperSection .rightPart {
+    width: 25%;
+  }
+  .upperSection .rightPart .card {
+    width: 100%;
+  }
+  .upperSection .rightPart .third {
+    display: none;
+  }
+  .upperSection .rightPart .fourth {
+    display: none;
+  }
+  .upperSection .leftPart {
+    width: 75%;
+  }
+  .hiddenSection {
+    display: flex;
+  }
+  .miniCard {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 657px) {
+  .menuIcon{
+    display: block;
+  }
+  .navlink{
+    display: none;
+  }
+  .upperSection {
+    flex-direction: column-reverse;
+  }
+  .upperSection .leftPart {
+    width: 100%;
+  }
+  .upperSection .rightPart {
+    width: 100%;
+  }
+  .upperSection .rightPart .card {
+    width: 50%;
+  }
+  .hiddenSection .third {
+    display: none;
+  }
+  .hiddenSection .card {
+    width: 50%;
+  }
+  .bottomSection {
+    flex-wrap: wrap;
+  }
+  .bottomSection .card {
+    width: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .bottomSection .card img {
+    display: block;
+    width: 30%;
+  }
+  .miniCardContainer {
+    flex-direction: row;
+  }
+  .miniCard {
+    width: 100%;
+    flex-direction: row-reverse;
+    gap: var(--medium-gap);
+  }
+  .miniCard img {
+    width: 30%;
+  }
+
+  .adsCard .content .leftContent {
+    display: none;
+  }
+}
+
+/* ============== UNIVERSAL CARD IMAGE FIX ============== */
+.upperCards .card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;       /* IMAGE PERFECT FIT */
+  object-position: center; /* CENTER CROP */
+  border-radius: 10px;
+  transition: transform .45s ease, filter .35s ease;
+}
+
+
+/* ============== HOVER EFFECT ============== */
+.upperCards .card:hover img {
+  transform: scale(1.06);     /* SMOOTH PROFESSIONAL ZOOM */
+  filter: brightness(0.85);   /* LIGHT DARKEN FOR EFFECT */
+}
+
+.upperCards .card:hover h3 {
+  color: rgb(18, 16, 69);
+  transition: .3s ease;
+}
+
+
+/* ============== CARD GENERAL STYLE ============== */
+.upperCards .card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.upperCards h3 {
+  line-height: 1.5;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+.upperCards p {
+  text-align: right;
+  color: #777;
+  font-size: .9rem;
+}
+
+
+/* ============== GRID FIX FOR TOP SECTIONS ============== */
+.upperSection {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.upperSection .rightPart {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.upperSection .leftPart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+/* ============== HIDDEN SECTION ============== */
+.hiddenSection {
+  margin-top: 30px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* ============== BOTTOM SECTION ============== */
+.bottomSection {
+  margin-top: 30px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.bottomSection .card {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.bottomSection .card img {
+  width: 130px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+/* ============== RESPONSIVE BREAKPOINTS ============== */
+@media (max-width: 992px) {
+  .upperSection {
+    grid-template-columns: 1fr;
+  }
+  .upperSection .rightPart {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .upperSection .rightPart {
+    grid-template-columns: 1fr;
+  }
+
+  .hiddenSection {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomSection {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomSection .card img {
+    width: 110px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .upperCards .card img {
+    height: 180px;
+  }
+}
+
