@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar () {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // 🧠 Close menu when window resized to desktop
@@ -57,12 +57,12 @@ export default function Navbar () {
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-2">
             {/* 🖥️ Desktop Links */}
-            <ul className="hidden lg:flex flex-row-reverse items-center gap-6 text-[clamp(16px,1.6vw,20px)]">
+            <ul className="hidden lg:flex flex-row-reverse items-center gap-8 text-[clamp(18px,1.8vw,22px)] font-semibold tracking-wide">
               {navLinks.map((link, idx) => (
                 <li key={idx}>
                   <Link
                     to={link.to}
-                    className="hover:underline transition-colors"
+                    className="relative text-black hover:text-[rgb(18,16,69)] transition-colors duration-300 font-bold after:content-[''] after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-[2px] after:bg-[rgb(18,16,69)] hover:after:w-full after:transition-all after:duration-300"
                   >
                     {link.label}
                   </Link>
@@ -109,7 +109,7 @@ export default function Navbar () {
             }`}
           >
             <div className="rounded-xl border border-gray-200 mt-2 bg-white shadow-md">
-              <div className="flex flex-col items-end p-2 gap-1 text-[17px] max-h-[400px] overflow-y-auto">
+              <div className="flex flex-col items-end p-2 gap-1 text-[18px] font-medium max-h-[400px] overflow-y-auto">
                 {navLinks.map((link, idx) => (
                   <Link
                     key={idx}
@@ -127,4 +127,4 @@ export default function Navbar () {
       </nav>
     </header>
   );
-};
+}

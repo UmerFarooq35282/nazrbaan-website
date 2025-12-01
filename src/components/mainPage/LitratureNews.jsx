@@ -32,7 +32,7 @@ export default function LitratureNews() {
       id="litrature"
       className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-6"
     >
-      <h1 className="text-2xl md:text-3xl font-bold mb-4">کالم</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-4">ادب و فنون</h1>
       <CardSlider dataList={litratureNews} loading={loading} />
     </section>
   );

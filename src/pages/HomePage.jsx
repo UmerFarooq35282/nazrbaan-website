@@ -1,3 +1,5 @@
+import { Outlet } from 'react-router-dom'
+import Footer from '../components/common/Footer'
 import Navbar  from '../components/common/Navbar'
 import MainPage from './MainPageContent'
 
@@ -5,7 +7,8 @@ function HomePage() {
   return (
     <>
         <Navbar />
-        <MainPage />
+        <Outlet />
+        <Footer />
     </>
   )
 }

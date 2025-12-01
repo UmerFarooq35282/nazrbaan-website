@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getCategoryNews } from "../../api/news/news.api";
 import { dummyCultureNews } from "../../utils/dummy.data";
 import CardSlider from "../common/CardSlider";
+import AdsCard from "../common/AdsCard";
 
 export default function CultureNews() {
   const [cultureNews, setCulturesNews] = useState([]);
@@ -34,6 +35,7 @@ export default function CultureNews() {
     >
       <h1 className="text-2xl md:text-3xl font-bold mb-4">ثقافت</h1>
       <CardSlider dataList={cultureNews} loading={loading} />
+      <AdsCard />
     </section>
   );
 }

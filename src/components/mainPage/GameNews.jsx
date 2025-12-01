@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getCategoryNews } from "../../api/news/news.api";
 import { dummyGameNews } from "../../utils/dummy.data";
 import CardSlider from "../common/CardSlider";
+import AdsCard from "../common/AdsCard";
 
 export default function GameNews() {
   const [gamesNews, setGamesNews] = useState([]);
@@ -34,6 +35,7 @@ export default function GameNews() {
     >
       <h1 className="text-2xl md:text-3xl font-bold mb-4">کھیل</h1>
       <CardSlider dataList={gamesNews} loading={loading} />
+      <AdsCard />
     </section>
   );
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { getFileURL } from "../../api/config/api.config";
 
 export default function CardSlider({ dataList = [], loading = false }) {
   const SkeletonCard = () => (
@@ -52,7 +53,7 @@ export default function CardSlider({ dataList = [], loading = false }) {
               src={
                 news.thumbnail?.startsWith("http")
                   ? news.thumbnail
-                  : `${news.thumbnail}.jpg`
+                  : `${getFileURL(news.thumbnail)}`
               }
               alt={news.title}
               className="w-full h-48 object-cover"
