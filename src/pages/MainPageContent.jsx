@@ -9,6 +9,7 @@ import EducationNews from "../components/mainPage/EducationNews";
 import HealthNews from "../components/mainPage/HealthNews";
 import LitratureNews from "../components/mainPage/LitratureNews";
 import ScienceTechNews from "../components/mainPage/ScienceTechNews";
+import SocialMedia from "../components/common/SocialMedia";
 
 function MainPage() {
   return (
@@ -22,6 +23,7 @@ function MainPage() {
       <HealthNews />
       <LitratureNews />
       <ScienceTechNews />
+      <SocialMedia />
     </>
   );
 }

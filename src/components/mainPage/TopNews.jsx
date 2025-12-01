@@ -71,16 +71,6 @@ export const TopNews = () => {
                     <h3 className="text-[18px] leading-7 font-[mainFont] line-clamp-3">
                       {news.title}
                     </h3>
-                    <p className="text-sm text-gray-500 mt-1 mb-1">
-                      {new Date(news.published_date).toLocaleTimeString(
-                        "ur-PK",
-                        {
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        }
-                      )}{" "}
-                      پہلے
-                    </p>
                   </div>
                 </Link>
               ))}
@@ -109,19 +99,6 @@ export const TopNews = () => {
                   <h3 className="text-[20px] md:text-[22px] leading-8 font-[mainFont] line-clamp-3">
                     {mainCard.title}
                   </h3>
-                  <p className="text-[16px] leading-8 text-gray-700 line-clamp-2">
-                    {mainCard.summary}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {new Date(mainCard.published_date).toLocaleTimeString(
-                      "ur-PK",
-                      {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      }
-                    )}{" "}
-                    پہلے
-                  </p>
                   <span className="inline-block px-5 py-2.5 rounded-lg bg-[rgb(18,16,69)] text-white font-semibold shadow hover:-translate-y-0.5 hover:shadow-lg transition">
                     مزید پڑھیں
                   </span>

@@ -20,7 +20,7 @@ export default function Navbar() {
 
   // 📜 Menu items list
   const navLinks = [
-    { label: "صفحہ اول", to: "/categoryNews/home" },
+    { label: "صفحہ اول", to: "/" },
     { label: "تازہ ترین", to: "/categoryNews/latest" },
     { label: "کھیل", to: "/categoryNews/sports" },
     { label: "تعلیم", to: "/categoryNews/education" },

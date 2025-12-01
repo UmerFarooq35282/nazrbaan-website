@@ -65,13 +65,7 @@ export default function CardSlider({ dataList = [], loading = false }) {
                 {news.title}
               </h3>
 
-              <p className="text-sm text-gray-500 mt-2 text-left">
-                {new Date(news.published_date).toLocaleTimeString("ur-PK", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                })}{" "}
-                پہلے
-              </p>
+              
             </div>
           </Link>
         </SwiperSlide>
