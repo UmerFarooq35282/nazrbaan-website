@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export default function Navbar () {
   const [menuOpen, setMenuOpen] = useState(false);
 
   // 🧠 Close menu when window resized to desktop

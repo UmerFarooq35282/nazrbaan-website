@@ -6,3 +6,11 @@
 }
 
 @import "tailwindcss";
+
+.swiper-pagination-bullet {
+  background: #121045 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #121045 !important;
+}

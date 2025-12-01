@@ -1,12 +1,9 @@
-import { Navbar } from "./components/common/Navbar";
-import AccordionUsage from "./components/common/NavbarAccordian";
-import { TopNews } from "./components/mainPage/TopNews";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <>
-    <Navbar />
-    <TopNews />
+      <HomePage />
     </>
   );
 }
