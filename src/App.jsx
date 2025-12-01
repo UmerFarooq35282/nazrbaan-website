@@ -1,10 +1,14 @@
+import { Navbar } from "./components/common/Navbar";
 import AccordionUsage from "./components/common/NavbarAccordian";
-import MainPage from "./pages/MainPage";
+import { TopNews } from "./components/mainPage/TopNews";
 
 function App() {
-  return <div className="container">
-    <MainPage />
-  </div>;
+  return (
+    <>
+    <Navbar />
+    <TopNews />
+    </>
+  );
 }
 
 export default App;

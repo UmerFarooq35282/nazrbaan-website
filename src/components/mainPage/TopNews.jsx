@@ -1,161 +1,82 @@
 export const TopNews = () => {
   return (
     <>
-      <section class="upperCards">
-        <section class="upperSection">
-          <div class="rightPart">
-            <div class="card">
-              <img src="/images/youh summit1.png" alt="" />
-              <h3>
-                کوئٹہ میں نوجوانوں کے لیے لیڈرشپ ڈیولپمنٹ پروگرام کا انعقاد
-                کوئٹہ کے ایک مقامی اسکول میں طلبہ کے لیے ایک روزہ تربیتی سیشن
-                منعقد کیا گیا
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
-            <div class="card">
-              <img src="/images/youh summit3.png" alt="" />
-              <h3>
-                کوئٹہ میں نوجوانوں کے لیے لیڈرشپ ڈیولپمنٹ پروگرام کا انعقاد
-                کوئٹہ کے ایک مقامی اسکول میں طلبہ کے لیے ایک روزہ تربیتی سیشن
-                منعقد کیا گیا
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
-            <div class="card third">
-              <img src="/images/meeting.jpg" alt="" />
-              <h3>
-                بلوچستان حکومت اور پی پی ایل کے درمیان شراکت، سوئی کی ترقی کیلئے
-                "ماسٹر پلان" پر پیش رفت کوئٹہ: ( نظربان بلوچستان نیوز ) بلوچستان
-                حکومت نے صوبے میں معاشی سرگرمیوں کے فروغ اور قدرتی وسائل کے
-                مقامی عوام تک فوائد پہنچانے کے لیے نجی و سرکاری اداروں کے ساتھ
-                شراکت داری کو اپنی ترجیح قرار دیا ہے۔
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
-            <div class="card fourth">
-              <img src="/images/quetta illegal construcion.png" alt="" />
-              <h3>
-                کوئٹہ میں تجاوزات کے خلاف کارروائیاں جاری، شہر کو منظم بنانے کا
-                عزم وزیر اعلیٰ بلوچستان میر سرفراز بگٹی کے وژن اور ایڈمنسٹریٹر
-                میٹروپولیٹن کارپوریشن کوئٹہ مجیب الرحمان قمبرانی کی ہدایات پر
-                شہر بھر میں تجاوزات کے خلاف مؤثر مہم جاری ہے۔ زون ون کے انچارج
-                علی رضا درّانی کی نگرانی میں فاطمہ جناح روڈ، لیاقت بازار اور
-                پرنس روڈ پر خصوصی کارروائیاں کی گئیں،
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
-          </div>
-          <div class="leftPart">
-            <div class="card">
-              <img
-                src="/images/governor meet china's foreign minister.png"
-                alt=""
-              />
-              <h3>
-                چینی ناظم الامور کی گورنر بلوچستان سے ملاقات، سی پیک اور سرمایہ
-                کاری پر تبادلہ خیال اسلام آباد (نظربان بلوچستان نیوز):
-              </h3>
-              <p>
-                چینی ناظم الامور کی گورنر بلوچستان سے ملاقات، سی پیک اور سرمایہ
-                کاری پر تبادلہ خیال اسلام آباد (نظربان بلوچستان نیوز): پاکستان
-                میں تعینات چین کے قائم مقام سفیر شی یوان چیانگ نے اسلام آباد میں
-                بلوچستان ہاؤس کا دورہ کیا، جہاں انہوں نے گورنر بلوچستان جعفر خان
-                مندوخیل سے ملاقات کی۔ ملاقات میں پاک چین تعلقات، چین-پاکستان
-                اقتصادی راہداری (سی پیک) اور باہمی تعاون کے مختلف پہلوؤں پر بات
-                چیت ہوئی۔ گورنر مندوخیل نے کہا کہ چین پاکستان کا دیرینہ اور
-                بااعتماد شراکت دار ہے، اور سی پیک منصوبہ نہ صرف پاکستان بلکہ
-                پورے خطے کی ترقی کے لیے ایک 'گیم چینجر' ثابت ہو سکتا ہے۔ گورنر
-                نے چینی سرمایہ کاروں کو بلوچستان کے زرعی شعبے، لائیو اسٹاک اور
-                فنی تعلیم میں سرمایہ کاری کی دعوت دی، جس سے مقامی سطح پر روزگار
-                کے نئے مواقع پیدا ہوں گے اور صوبے کی معیشت مضبوط ہوگی۔ ملاقات کے
-                اختتام پر دونوں فریقین نے تحائف کا تبادلہ کیا، جب کہ گورنر
-                مندوخیل نے چینی سفیر کے اعزاز میں عشائیہ بھی دیا۔
-              </p>
-              <p>5 منٹ پہلے</p>
-              <a
-                class="read-more"
-                href="news.html?title=Breaking+News&date=21-11-2025&content=Yeh+poori+news+ka+matn+hai"
-              >
-                Read More
-              </a>
-            </div>
-          </div>
-        </section>
-        <section class="hiddenSection">
-          <div class="card">
-            <img src="/images/TopsNews/news9.jpg" alt="" />
-            <h3>
-              بلوچستان صوبائی اسمبلی کا اجلاس کل بروز پیر 29 ستمبر 2025 سہ پہر 3
-              بجے منعقد ہوگا
+      <section class="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+    {/* <!-- Upper Sections wrapper --> */}
+    <div class="flex flex-col gap-6 lg:flex-row-reverse">
+      {/* <!-- RightPart: 4 small cards (grid) --> */}
+      <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4 order-2 lg:order-1">
+        {/* <!-- Card 1 --> */}
+        <article class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
+          <img src="/images/youh summit1.png" alt="" class="w-full h-40 md:h-48 lg:h-40 object-cover" />
+          <div class="p-3 flex flex-col gap-2">
+            <h3 class="text-[18px] leading-7">
+              کوئٹہ میں نوجوانوں کے لیے لیڈرشپ ڈیولپمنٹ پروگرام کا انعقاد
+              کوئٹہ کے ایک مقامی اسکول میں طلبہ کے لیے ایک روزہ تربیتی سیشن
+              منعقد کیا گیا
             </h3>
-            <p>5 منٹ پہلے</p>
+            <p class="text-sm text-gray-500">5 منٹ پہلے</p>
           </div>
-          <div class="card">
-            <img src="/images/TopsNews/news8.jpg" alt="" />
-            <h3>
-              ’لِونگ اپارٹ ٹوگیدر‘: کیا شادی شدہ افراد ایک دوسرے سے دور رہ کر
-              بھی اچھی ازدواجی زندگی گزار سکتے ہیں؟
+        </article>
+
+        {/* <!-- Card 2 --> */}
+        <article class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden">
+          <img src="/images/youh summit3.png" alt="" class="w-full h-40 md:h-48 lg:h-40 object-cover" />
+          <div class="p-3 flex flex-col gap-2">
+            <h3 class="text-[18px] leading-7">
+              کوئٹہ میں نوجوانوں کے لیے لیڈرشپ ڈیولپمنٹ پروگرام کا انعقاد
+              کوئٹہ کے ایک مقامی اسکول میں طلبہ کے لیے ایک روزہ تربیتی سیشن
+              منعقد کیا گیا
             </h3>
-            <p>5 منٹ پہلے</p>
+            <p class="text-sm text-gray-500">5 منٹ پہلے</p>
           </div>
-          <div class="card third">
-            <img src="/images/TopsNews/news7.jpg" alt="" />
-            <h3>
-              ’کو مٹا ٹرین سروس بحال سپیز نڈ کے قریب ریلوے لائن پر دھماکے سے
-              تباہ ہونے والے ٹیک کی مرمت کا کام مکمل پشاور جانے والی جعفر
-              ایکسپریس روانہ تمام ٹرینیں اپنے مقررہ وقت پر روانہ ہوں گی ، ریلوے
-              ذرائع
+        </article>
+
+        {/* <!-- Card 3 (hidden at <=1021px like your CSS) --> */}
+        <article class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden hidden md:block">
+          <img src="/images/meeting.jpg" alt="" class="w-full h-40 md:h-48 lg:h-40 object-cover" />
+          <div class="p-3 flex flex-col gap-2">
+            <h3 class="text-[18px] leading-7">
+              بلوچستان حکومت اور پی پی ایل کے درمیان شراکت، سوئی کی ترقی کیلئے "ماسٹر پلان" پر پیش رفت...
             </h3>
-            <p>5 منٹ پہلے</p>
+            <p class="text-sm text-gray-500">5 منٹ پہلے</p>
           </div>
-        </section>
-        <section class="bottomSection">
-          <div class="card">
-            <img src="/images/TopsNews/news6.jpg" alt="" />
-            <div>
-              <h3>
-                ’واشک گریڈ اسٹیشن میں ٹرانسفارمر نصب، ڈپٹی کمشنر عبدالمجید بلوچ
-                کا معائنہ 2 ماء میں اسٹیشن فعال ہوگا، پہلے مرحلے میں واشک سٹی
-                وکلیاں، جبکہ دوسرے مرحلے میں تمام یونین کونسلز کو فیڈرز کے نظام
-                سے منسلک کیا جائے گا
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
+        </article>
+
+        {/* <!-- Card 4 (hidden at <=1021px like your CSS) --> */}
+        <article class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden hidden md:block">
+          <img src="/images/quetta illegal construcion.png" alt="" class="w-full h-40 md:h-48 lg:h-40 object-cover" />
+          <div class="p-3 flex flex-col gap-2">
+            <h3 class="text-[18px] leading-7">
+              کوئٹہ میں تجاوزات کے خلاف کارروائیاں جاری، شہر کو منظم بنانے کا عزم...
+            </h3>
+            <p class="text-sm text-gray-500">5 منٹ پہلے</p>
           </div>
-          <div class="card">
-            <img src="/images/TopsNews/news3.jpg" alt="" />
-            <div>
-              <h3>
-                2 روز قبل سوراب سے لاپتہ ہونے والے ڈی ایس پی مستونگ محمدرفیق
-                حمزہ بازیاب ہو کرگھر پہنچ گئے
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
+        </article>
+      </div>
+
+      {/* <!-- LeftPart: Big feature --> */}
+      <div class="w-full lg:w-1/2 order-1 lg:order-2">
+        <article class="bg-white rounded-xl shadow border border-gray-200 overflow-hidden flex flex-col">
+          <img src="/images/governor meet china's foreign minister.png" alt="" class="w-full h-56 md:h-72 lg:h-[420px] object-cover" />
+          <div class="p-4 md:p-6 flex flex-col gap-3">
+            <h3 class="text-[20px] md:text-[22px] leading-8">
+              چینی ناظم الامور کی گورنر بلوچستان سے ملاقات، سی پیک اور سرمایہ کاری پر تبادلہ خیال اسلام آباد (نظربان بلوچستان نیوز):
+            </h3>
+            <p class="text-[16px] leading-8 text-gray-700">
+              چینی ناظم الامور کی گورنر بلوچستان سے ملاقات، سی پیک اور سرمایہ کاری پر تبادلہ خیال...
+            </p>
+            <p class="text-sm text-gray-500">5 منٹ پہلے</p>
+            <a
+              class="inline-block px-5 py-2.5 rounded-lg bg-[rgb(18,16,69)] text-white font-semibold shadow hover:-translate-y-0.5 hover:shadow-lg transition"
+              href="news.html?title=Breaking+News&date=21-11-2025&content=Yeh+poori+news+ka+matn+hai">
+              Read More
+            </a>
           </div>
-          <div class="card">
-            <img src="/images/TopsNews/news1.jpg" alt="" />
-            <div>
-              <h3>
-                ’لِونگ اپارٹ ٹوگیدر‘: کیا شادی شدہ افراد ایک دوسرے سے دور رہ کر
-                بھی اچھی ازدواجی زندگی گزار سکتے ہیں؟
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
-          </div>
-          <div class="card">
-            <img src="/images/TopsNews/news3.jpg" alt="" />
-            <div>
-              <h3>
-                ’ایف آئی اے بلوچستان زون کی بڑی کارروائیاں حوالہ ہنڈی اور غیر
-                قانونی کرنسی اپیچینج میں ملوث 3 ملزمان گرفتار ملزمان کے قبضے
-                18لاکھ 26 ہزار پاکستانی روپے چیک بکس موبائل فون برآمد
-              </h3>
-              <p>5 منٹ پہلے</p>
-            </div>
-          </div>
-        </section>
-      </section>
+        </article>
+      </div>
+    </div>
+  </section>
     </>
   );
 };
