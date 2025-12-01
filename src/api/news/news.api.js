@@ -15,7 +15,7 @@ export const getCategoryNews = async (cat) => {
         const response = await axios.get(`${BASE_URL}/apis/get_category_news.php?category=${cat}&lang=ur`);
         return response.data?.data;
     } catch (error) {
-        alert("Error in getting sports news", error)
+        console.log(`Error in getting ${cat} news`, error)
     }
 }
 
