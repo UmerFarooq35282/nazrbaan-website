@@ -1,39 +1,52 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getCategoryNews } from "../../api/news/news.api";
-import { dummyColumnNews } from "../../utils/dummy.data";
 import CardSlider from "../common/CardSlider";
 
 export default function ColumnNews() {
-  const [columnNews, setColumnsNews] = useState([]);
+  const [columnNews, setColumnNews] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function getColumnNews() {
+    async function fetchColumnNews() {
       try {
         const data = await getCategoryNews("column");
-        if (data.length == 0) {
-          setColumnsNews(dummyColumnNews);
+        if (data && data.length > 0) {
+          setColumnNews(data);
         } else {
-          setColumnsNews(data);
+          setColumnNews([]);
         }
       } catch (error) {
-        console.log("Error in getting data ::", error.message);
-        setColumnsNews(dummyColumnNews);
+        console.error("Error fetching column news:", error.message);
+        setColumnNews([]);
       } finally {
         setLoading(false);
       }
     }
 
-    getColumnNews();
+    fetchColumnNews();
   }, []);
 
   return (
     <section
       id="column"
       className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-6"
+      dir="rtl"
     >
-      <h1 className="text-2xl md:text-3xl font-bold mb-4">کالم</h1>
+      <Link
+        to="/categoryNews/column"
+        className="block text-2xl md:text-3xl font-bold mb-4 text-[rgb(18,16,69)] hover:underline"
+      >
+        کالم →
+      </Link>
+
       <CardSlider dataList={columnNews} loading={loading} />
+
+      {!loading && columnNews.length === 0 && (
+        <p className="text-gray-500 text-right mt-4">
+          فی الحال کالم کی کوئی خبر دستیاب نہیں۔
+        </p>
+      )}
     </section>
   );
 }

@@ -9,34 +9,21 @@ function Footer() {
 
         <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 my-5">
           <li>
-            <a class="hover:underline" href="#">
-              استعمال کے ضوابط
-            </a>
-          </li>
-          <li>
-            <a class="hover:underline" href="#">
-              پرائیویسی پالیسی
-            </a>
-          </li>
-          <li>
-            <a class="hover:underline" href="#">
+            <a
+              class="hover:underline"
+              href="https://whatsapp.com/channel/0029VbApPeXElagmLdZQ2G3e"
+              target="_blank"
+            >
               {" "}
               نظربان بلوچستان سے رابطہ کریں
             </a>
           </li>
           <li>
-            <a class="hover:underline" href="#">
-              {" "}
-              نظربان بلوچستان نیوز دیگر زبانوں میں
-            </a>
-          </li>
-          <li>
-            <a class="hover:underline" href="#">
-              کوکیز
-            </a>
-          </li>
-          <li>
-            <a class="hover:underline" href="#">
+            <a
+              class="hover:underline"
+              href="https://www.facebook.com/share/1Cq7JWDFbb/"
+              target="_blank"
+            >
               {" "}
               نظربان بلوچستان کے بارے میں
             </a>
@@ -45,9 +32,8 @@ function Footer() {
 
         <hr class="border-gray-700" />
         <p class="mt-3 text-sm md:text-base leading-7">
-          Designed & Developed by SM Hamza © 2025 نظربان بلوچستان - نظربان
-          بلوچستان بیرونی ویب سائٹس کے مواد کا ذمہ دار نہیں۔ بیرونی لنکس کے بارے
-          میں ہماری پالیسی۔
+           نظربان بلوچستان - نظربان
+          بلوچستان بیرونی ویب سائٹس کے مواد کا ذمہ دار نہیں۔ 
         </p>
       </div>
     </footer>

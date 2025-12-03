@@ -28,48 +28,53 @@ export default function CardSlider({ dataList = [], loading = false }) {
   }
 
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={20}
-      slidesPerView={1}
-      navigation
-      pagination={{ clickable: true }}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      breakpoints={{
-        640: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-        1280: { slidesPerView: 4 },
-      }}
-      className="py-4"
-    >
-      {dataList.map((news, index) => (
-        <SwiperSlide key={news.news_id || index} className="h-full">
-          <Link
-            to={`/newsDetail/${news.news_id}`}
-            className="bg-white rounded-xl shadow border border-gray-200 overflow-hidden flex flex-col h-full hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]"
-          >
-            {/* 🖼️ Image */}
-            <img
-              src={
-                news.thumbnail?.startsWith("http")
-                  ? news.thumbnail
-                  : `${getFileURL(news.thumbnail)}`
-              }
-              alt={news.title}
-              className="w-full h-48 object-cover"
-            />
+    <div className="relative pb-10"> {/* ✅ Added extra bottom padding for dots */}
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 },
+        }}
+        className="pb-8" // ✅ ensures pagination has its own margin below
+      >
+        {dataList.map((news, index) => (
+          <SwiperSlide key={news.news_id || index} className="h-full">
+            <Link
+              to={`/newsDetail/${news.news_id}`}
+              className="bg-white rounded-xl shadow border border-gray-200 overflow-hidden flex flex-col h-full hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+            >
+              {/* 🖼️ Image */}
+              <img
+                src={
+                  news.thumbnail?.startsWith("http")
+                    ? news.thumbnail
+                    : `${getFileURL(news.thumbnail)}`
+                }
+                alt={news.title}
+                className="w-full h-48 object-cover"
+              />
 
-            {/* 📰 Content */}
-            <div className="p-3 flex flex-col justify-between flex-grow">
-              <h3 className="text-[18px] leading-7 font-[mainFont] line-clamp-3">
-                {news.title}
-              </h3>
-
-              
-            </div>
-          </Link>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+              {/* 📰 Content */}
+              <div className="p-3 flex flex-col justify-between flex-grow">
+                <h3
+                  className="text-[18px] leading-7 font-[mainFont] line-clamp-3 mb-3"
+                  title={news.title}
+                >
+                  {news.title.length > 70
+                    ? news.title.substring(0, 70) + "..."
+                    : news.title}
+                </h3>
+              </div>
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 }

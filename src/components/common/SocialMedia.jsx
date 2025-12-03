@@ -9,6 +9,7 @@ function SocialMedia() {
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <a
           href="https://whatsapp.com/channel/0029VbApPeXElagmLdZQ2G3e"
+          target="_blank"
           class="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 hover:shadow"
         >
           <img src="/images/whatsapp.webp" alt="" class="w-12 h-12" />
@@ -17,18 +18,16 @@ function SocialMedia() {
 
         <a
           href="https://www.facebook.com/share/1Cq7JWDFbb/"
+          target="_blank"
           class="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 hover:shadow"
         >
-          <img
-            src="/images/Logo_de_Facebook.png"
-            alt=""
-            class="w-12 h-12"
-          />
+          <img src="/images/Logo_de_Facebook.png" alt="" class="w-12 h-12" />
           <h2 class="text-lg font-semibold">Facebook</h2>
         </a>
 
         <a
           href="https://www.instagram.com/nazrbanb?igsh=bjg5YjhtYTF4bzln"
+          target="_blank"
           class="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 hover:shadow"
         >
           <img src="/images/instagram.png" alt="" class="w-12 h-12" />
@@ -37,6 +36,7 @@ function SocialMedia() {
 
         <a
           href="https://x.com/NazrbanNews?t=Lj-YfnBCnNxQvlyMOlYYnQ&s=09"
+          target="_blank"
           class="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 hover:shadow"
         >
           <img src="/images/X.webp" alt="" class="w-12 h-12" />
@@ -45,6 +45,7 @@ function SocialMedia() {
 
         <a
           href="https://www.tiktok.com/@nazrban.balochistan?_r=1&_t=ZS-91H9sBRcCiS"
+          target="_blank"
           class="flex items-center justify-center gap-3 bg-white border border-gray-200 rounded-xl p-3 hover:shadow"
         >
           <img src="/images/tiktok.jpg" alt="" class="w-12 h-12" />

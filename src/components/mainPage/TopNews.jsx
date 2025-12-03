@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { getTopNews } from "../../api/news/news.api";
-import { dummyLatestNews } from "../../utils/dummy.data";
 import { useEffect, useState } from "react";
 import { getFileURL } from "../../api/config/api.config";
 
@@ -15,19 +14,20 @@ export const TopNews = () => {
         if (data && data.length > 0) {
           setTopNewsData(data);
         } else {
-          setTopNewsData(dummyLatestNews);
+          setTopNewsData([]); // ✅ no dummy fallback
         }
       } catch (error) {
-        console.log("Error fetching Top News ::", error.message);
-        setTopNewsData(dummyLatestNews);
+        console.error("Error fetching Top News:", error.message);
+        setTopNewsData([]); // ✅ empty array if error
       } finally {
         setLoading(false);
       }
     }
+
     fetchTopNews();
   }, []);
 
-  // 🦴 Skeleton Loader (for initial load)
+  // 🦴 Skeleton Loader
   const SkeletonCard = () => (
     <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden animate-pulse">
       <div className="w-full h-48 bg-gray-200" />
@@ -40,10 +40,16 @@ export const TopNews = () => {
 
   // 🧠 Split main & small cards
   const mainCard = topNewsData[0];
-  const smallCards = topNewsData.slice(1, 5); // next 4
+  const smallCards = topNewsData.slice(1, 5);
+
+  // ✅ Hide section completely if no data and not loading
+  if (!loading && topNewsData.length === 0) return null;
 
   return (
-    <section className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+    <section
+      className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6"
+      dir="rtl"
+    >
       {/* 🔹 Upper Section Wrapper */}
       <div className="flex flex-col gap-6 lg:flex-row-reverse">
         {/* 🔹 RightPart: 4 small cards */}
@@ -58,15 +64,17 @@ export const TopNews = () => {
                     i >= 2 ? "hidden md:block" : ""
                   }`}
                 >
-                  <img
-                    src={
-                      news.thumbnail?.startsWith("http")
-                        ? news.thumbnail
-                        : `${getFileURL(news.thumbnail)}`
-                    }
-                    alt={news.title}
-                    className="w-full h-48 md:h-56 lg:h-52 object-cover"
-                  />
+                  {news.thumbnail && (
+                    <img
+                      src={
+                        news.thumbnail.startsWith("http")
+                          ? news.thumbnail
+                          : getFileURL(news.thumbnail)
+                      }
+                      alt={news.title}
+                      className="w-full h-48 md:h-56 lg:h-52 object-cover"
+                    />
+                  )}
                   <div className="p-3 pb-1 flex flex-col gap-1">
                     <h3 className="text-[18px] leading-7 font-[mainFont] line-clamp-3">
                       {news.title}
@@ -86,15 +94,17 @@ export const TopNews = () => {
                 to={`/newsDetail/${mainCard.news_id}`}
                 className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden flex flex-col hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]"
               >
-                <img
-                  src={
-                    mainCard.thumbnail?.startsWith("http")
-                      ? mainCard.thumbnail
-                      : `${getFileURL(mainCard.thumbnail)}`
-                  }
-                  alt={mainCard.title}
-                  className="w-full h-56 md:h-72 lg:h-[420px] object-cover"
-                />
+                {mainCard.thumbnail && (
+                  <img
+                    src={
+                      mainCard.thumbnail.startsWith("http")
+                        ? mainCard.thumbnail
+                        : getFileURL(mainCard.thumbnail)
+                    }
+                    alt={mainCard.title}
+                    className="w-full h-56 md:h-72 lg:h-[420px] object-cover"
+                  />
+                )}
                 <div className="p-4 md:p-6 flex flex-col gap-3">
                   <h3 className="text-[20px] md:text-[22px] leading-8 font-[mainFont] line-clamp-3">
                     {mainCard.title}

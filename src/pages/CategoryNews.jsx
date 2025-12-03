@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getCategoryNews } from "../api/news/news.api";
-import { dummyLatestNews } from "../utils/dummy.data";
 import { getFileURL } from "../api/config/api.config";
 
 export default function CategoryNews() {
@@ -19,11 +18,11 @@ export default function CategoryNews() {
         if (data && data.length > 0) {
           setNewsData(data);
         } else {
-          setNewsData(dummyLatestNews);
+          setNewsData([]); // ✅ no dummy fallback
         }
       } catch (error) {
-        console.log("Error fetching category news:", error.message);
-        setNewsData(dummyLatestNews);
+        console.error("Error fetching category news:", error.message);
+        setNewsData([]); // ✅ no dummy fallback
       } finally {
         setLoading(false);
       }
@@ -42,7 +41,7 @@ export default function CategoryNews() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Skeleton Loader
+  // Skeleton Loader (Shimmer)
   const SkeletonCard = () => (
     <div className="bg-white rounded-xl shadow border border-gray-200 overflow-hidden animate-pulse">
       <div className="w-full h-40 bg-gray-200" />
@@ -53,98 +52,119 @@ export default function CategoryNews() {
     </div>
   );
 
+  // Urdu category labels
+  const categoryLabels = {
+    latest: "تازہ ترین",
+    sports: "کھیل",
+    education: "تعلیم",
+    health: "صحت",
+    business: "کاروبار",
+    litrature: "ادب و فنون",
+    "science & technology": "سائنس اینڈ ٹیکنالوجی",
+    culture: "ثقافت",
+    column: "کالم",
+  };
+
+  const categoryTitle = categoryLabels[categoryName] || "خبریں";
+
   return (
-    <section className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6">
+    <section
+      className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 min-h-[50vh]" // ✅ ensures 50vh min height
+      dir="rtl"
+    >
+      {/* 🏷️ Category Title */}
       <h1 className="text-2xl md:text-3xl font-bold text-right mb-6">
-        {categoryName === "latest"
-          ? "تازہ ترین"
-          : categoryName === "sports"
-          ? "کھیل"
-          : categoryName === "education"
-          ? "تعلیم"
-          : categoryName === "health"
-          ? "صحت"
-          : categoryName === "business"
-          ? "کاروبار"
-          : categoryName === "litrature"
-          ? "ادب و فنون"
-          : categoryName === "science & technology"
-          ? "سائنس اینڈ ٹیکنالوجی"
-          : categoryName === "culture"
-          ? "ثقافت"
-          : categoryName === "column"
-          ? "کالم"
-          : "خبریں"}
+        {categoryTitle}
       </h1>
 
-      {/* 🔹 News Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {loading
-          ? Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)
-          : currentData.map((news, index) => (
+      {/* 🔹 Loader */}
+      {loading ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 min-h-[50vh]">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
+      ) : newsData.length === 0 ? (
+        <div className="text-center text-gray-500 py-20 min-h-[50vh]">
+          اس زمرے میں فی الحال کوئی خبر دستیاب نہیں۔
+        </div>
+      ) : (
+        <>
+          {/* 🔹 News Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {currentData.map((news) => (
               <Link
-                key={news.news_id || index}
+                key={news.news_id}
                 to={`/newsDetail/${news.news_id}`}
                 className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]"
               >
-                <img
-                  src={
-                    news.thumbnail?.startsWith("http")
-                      ? news.thumbnail
-                      : `${getFileURL(news.thumbnail)}`
-                  }
-                  alt={news.title}
-                  className="w-full h-40 object-cover"
-                />
+                {news.thumbnail && (
+                  <img
+                    src={
+                      news.thumbnail.startsWith("http")
+                        ? news.thumbnail
+                        : `${getFileURL(news.thumbnail)}`
+                    }
+                    alt={news.title}
+                    className="w-full h-40 object-cover"
+                  />
+                )}
                 <div className="p-3 flex flex-col gap-1">
                   <h3 className="text-[18px] leading-7 font-[mainFont] line-clamp-3">
                     {news.title}
                   </h3>
                   <p className="text-sm text-gray-500 mt-1">
-                    {new Date(news.published_date).toLocaleDateString("ur-PK", {
-                      year: "numeric",
-                      month: "short",
-                      day: "2-digit",
-                    })}
+                    {news.published_date
+                      ? new Date(news.published_date).toLocaleDateString(
+                          "ur-PK",
+                          {
+                            year: "numeric",
+                            month: "short",
+                            day: "2-digit",
+                          }
+                        )
+                      : ""}
                   </p>
                 </div>
               </Link>
             ))}
-      </div>
+          </div>
 
-      {/* 🔹 Pagination */}
-      {totalPages > 1 && (
-        <div className="flex justify-center items-center gap-2 mt-8">
-          <button
-            onClick={() => handlePageChange(currentPage - 1)}
-            className="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-100"
-            disabled={currentPage === 1}
-          >
-            پچھلا
-          </button>
+          {/* 🔹 Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-2 mt-8">
+              <button
+                onClick={() => handlePageChange(currentPage - 1)}
+                className="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-100"
+                disabled={currentPage === 1}
+              >
+                پچھلا
+              </button>
 
-          {[...Array(totalPages)].map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handlePageChange(i + 1)}
-              className={`px-3 py-1 rounded border ${
-                currentPage === i + 1
-                  ? "bg-[rgb(18,16,69)] text-white"
-                  : "border-gray-300 text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              {i + 1}
-            </button>
-          ))}
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => handlePageChange(i + 1)}
+                  className={`px-3 py-1 rounded border ${
+                    currentPage === i + 1
+                      ? "bg-[rgb(18,16,69)] text-white"
+                      : "border-gray-300 text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
 
-          <button
-            onClick={() => handlePageChange(currentPage + 1)}
-            className="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-100"
-            disabled={currentPage === totalPages}
-          >
-            اگلا
-          </button>
-        </div>
+              <button
+                onClick={() => handlePageChange(currentPage + 1)}
+                className="px-3 py-1 rounded border border-gray-300 text-gray-700 hover:bg-gray-100"
+                disabled={currentPage === totalPages}
+              >
+                اگلا
+              </button>
+            </div>
+          )}
+        </>
       )}
     </section>
   );
